@@ -1,28 +1,80 @@
-public class AD1_2021_1 {
+package com.company;
+
+import java.util.Arrays;
+
+class Post {
+    //Atributos da classe Post
+    private String textoPost;
+    private Amigo quemCurtiu[];
+    private int qtdCurtidas;
+
+    //Construtor da classe Post
+    public Post(String textoPost) {
+        this.textoPost = textoPost;
+        this.qtdCurtidas = 0;
+    }
+
+    //Funcao para receber curtida, atualizando o contador e o array dos amigos que curtiram o post
+    public void recebeCurtida(Amigo a) {
+        this.quemCurtiu[qtdCurtidas] = a;
+        this.qtdCurtidas++;
+    }
+
+    public String retornaNomesQueCurtiram() {
+        String retorno = null;
+        for (Amigo a: quemCurtiu)
+            if (a != null)
+                retorno = retorno + a;
+            else
+                break;
+        return retorno + "\n";
+        //Verificar impressão se com o nome apenas ou se todos os dados de amigo
+    }
+
+    // Retorno da classe
+    public String toString() {
+        return this.textoPost + ": " + this.qtdCurtidas + " curtidas";
+    }
+
+}
+class Amigo {
+    //Atributos da classe Amigo
+    private String nome;
+
+    //Construtor da classe Amigo
+    public Amigo(String nome) {
+        this.nome = nome;
+    }
+
+    public String toString() {
+        return this.nome;
+    }
+
+    public String postar(Post p) {
+        //p.
+        return null;
+    }
+
+    public String curtir(Post p) {
+        //p.
+        return null;
+    }
+}
+
+class Rede {
+    private int qtdAmigos;
+
+    //Construtor da classe
+    public Rede() {
+
+    }
+}
+
+
+class testePrint {
+
     public static void main(String[] args) {
         Amigo fulano = new Amigo("Fulano");
-        Amigo ciclano = new Amigo("Ciclano");
-        Amigo beltrano = new Amigo("Beltrano");
-        Rede paraiso = new Rede();
-        paraiso.adicionarAmigo(fulano);
-        paraiso.adicionarAmigo(ciclano);
-        paraiso.adicionarAmigo(beltrano);
-        Post bomdia = new Post("Bom dia!");
-        Post boatarde = new Post("Boa tarde!");
-        Post boanoite = new Post("Boa noite!");
-        fulano.postar(bomdia);
-        fulano.postar(boatarde);
-        ciclano.postar(boanoite);
-        beltrano.curtir(bomdia);
-        beltrano.curtir(boatarde);
-        beltrano.curtir(boanoite);
-        fulano.curtir(boanoite);
-        System.out.println("Timeline:");
-        System.out.println(paraiso.timeline());
-        System.out.println("Post mais curtido de um usuário:");
-        Post maiscurtido = ciclano.retornaPostMaisCurtido();
-        System.out.println(maiscurtido);
-        System.out.println("Quem curtiu: " +
-                maiscurtido.retornaNomesQueCurtiram());
+        System.out.println(fulano);
     }
 }
