@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 class Post {
     //Atributos da classe Post
     private String textoPost;
@@ -79,17 +81,36 @@ class Amigo {
     }
 
     public String toString() {
-        return "Meu nome é" + this.nome + ", e tenho " + this.qtdPosts;
+        return this.nome + " :" + "\n" + Arrays.toString(this.meusPosts);
+        //Verificar se não é melhor um for
     }
 
 
 }
 
 class Rede {
+    //Atributos da classe Rede
     private int qtdAmigos;
+    private Amigo amigosNaRede[];
+    private static short MAX_FRIENDS = 1000;
 
-    //Construtor da classe
+    //Construtor da classe Rede
     public Rede() {
+        this.amigosNaRede = new Amigo[MAX_FRIENDS];
+        this.qtdAmigos = 0;
+    }
+
+    //Função para adicionara Amigo a Rede
+    public void adicionarAmigo(Amigo a) {
+        this.amigosNaRede[qtdAmigos] = a;
+        this.qtdAmigos++;
+        System.out.println(a + "foi adicionado a rede");
+    }
+
+    public void timeline() {
+        for (Amigo a: amigosNaRede)
+            System.out.println(a.toString());
+        //Verificar o retorno se está correto
 
     }
 }
