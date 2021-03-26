@@ -1,11 +1,9 @@
-package com.company;
-
 /**
  * CEDERJ
  * Curso Superior de Tecnologia em Sistemas de Computação
  * Disciplina: Programação Orientada a Objetos
  * AD1 2021.1
- * Aluno: Daniel Gustavo Braz Rocha   Matricula:20113050368    Polo:Pirai
+ * Aluno: Daniel Gustavo Braz Rocha   Matricula:20113050368    Polo:Piraí
  */
 
 class Post {
@@ -171,7 +169,6 @@ class Rede {
         return retorno;
     }
 
-    // Método que retorna a String de representação da classe Post
 }
 
 
